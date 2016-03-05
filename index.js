@@ -1,6 +1,9 @@
 var express = require('express');
 var app = express();
 
+
+var port = process.env.PORT || 8080;
+
 app.get('/:id.jpg', function (req, res) {
   console.log('id', req.params.id)
   res.statusCode = 302
@@ -8,6 +11,6 @@ app.get('/:id.jpg', function (req, res) {
   res.end()
 });
 
-app.listen(3000, function () {
+app.listen(port, function () {
   console.log('Example app listening on port 3000!');
 });
